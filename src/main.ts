@@ -11,6 +11,11 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
+      // El transform este sirve para transformar los endpoints y los query parameters, por ejemplo que en el endpoint coloque 1, lo convierta de string a number
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      }
     })
   );
 
